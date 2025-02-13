@@ -21,3 +21,15 @@ testDiscovery:
 testRunnerCommand: npx playwright test $test
 
 jobLabel: [playwright-VanillaJS, win, autosplit] 
+report: true
+partialReports:
+    frameworkName: extent
+    location: reports/
+    type: html
+post:
+    - mv logs/ reports/
+    - tar -czf test-results.tar.gz reports/
+env:
+    LT_USERNAME: ${{ .secrets.LT_USERNAME }}
+    LT_ACCESS_KEY: ${{ .secrets.LT_ACCESS_KEY }}
+    base_url: "https://www.lambdatest.com/selenium-playground"

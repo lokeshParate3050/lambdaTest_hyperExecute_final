@@ -7,7 +7,8 @@ test.describe('Validate Required Field Errors and Successful Submission in Form'
       await page.setViewportSize({ width: 1500, height: 670 });
 
     // Navigate to https://www.lambdatest.com/selenium-playground
-      await page.goto('https://www.lambdatest.com/selenium-playground/', { waitUntil: 'networkidle' });
+      const baseUrl = process.env.base_url || "https://www.lambdatest.com/selenium-playground";
+      await page.goto(baseUrl,{ waitUntil: 'networkidle' });
 
     // Click “Input Form Demo” link
       let locator1 = 'a[href="https://www.lambdatest.com/selenium-playground/input-form-demo"]';
@@ -50,7 +51,8 @@ test.describe('Validate Required Field Errors and Successful Submission in Form'
     await page.setViewportSize({ width: 1500, height: 670 });
 
     // Navigate to https://www.lambdatest.com/selenium-playground
-      await page.goto('https://www.lambdatest.com/selenium-playground/', { waitUntil: 'networkidle' });
+      const baseUrl = process.env.base_url || "https://www.lambdatest.com/selenium-playground";
+      await page.goto(baseUrl,{ waitUntil: 'networkidle' });
 
     // Click “Input Form Demo” link
       let locator1 = 'a[href="https://www.lambdatest.com/selenium-playground/input-form-demo"]';

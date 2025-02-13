@@ -12,7 +12,8 @@ test.describe('scenario "Drag & Drop Sliders"', () => {
     await page.setViewportSize({ width: 1920, height: 1080 });
 
 // Navigate to :https://www.lambdatest.com/selenium-playground
-  await page.goto('https://www.lambdatest.com/selenium-playground/',{ waitUntil: 'networkidle' });
+const baseUrl = process.env.base_url || "https://www.lambdatest.com/selenium-playground";
+await page.goto(baseUrl,{ waitUntil: 'networkidle' });
 
 // Click “Simple Form Demo” link
   let locator1 = 'a[href="https://www.lambdatest.com/selenium-playground/drag-drop-range-sliders-demo"]';
